@@ -1,0 +1,81 @@
+/* ============================================================
+   QUIRE — DESIGN TOKENS
+   Light palette on bare :root; dark redefined (not inverted).
+   ============================================================ */
+:root{
+  /* surfaces */
+  --bg:#FBFAF8; --bg-side:#F4F3F0; --surface:#FFFFFF; --surface-2:#F6F5F2; --surface-3:#EEEDE9;
+  --sunken:#F7F6F3; --overlay:rgba(24,22,19,.28);
+  /* lines */
+  --border:#E9E7E2; --border-strong:#DAD7D0; --divider:#F0EEEA;
+  /* text */
+  --text:#1D1C1A; --text-2:#57544E; --text-3:#6B6760; --text-4:#8C8880; --text-inv:#FFFFFF;
+  /* accent (swappable) */
+  --acc-l:#4B5BD6; --acc-d:#8E9AF3; --accent:var(--acc-l); --on-accent:#FFFFFF;
+  --accent-soft:color-mix(in srgb, var(--accent) 10%, transparent);
+  --accent-line:color-mix(in srgb, var(--accent) 38%, transparent);
+  /* semantic */
+  --green:#25754B; --amber:#8F5E0E; --red:#B23C30; --blue:#3570C4; --violet:#7652C2; --teal:#1E8580; --rose:#BC4270; --orange:#C0612B; --gray:#8A867E;
+  --green-soft:color-mix(in srgb, var(--green) 11%, transparent);
+  --amber-soft:color-mix(in srgb, var(--amber) 12%, transparent);
+  --red-soft:color-mix(in srgb, var(--red) 10%, transparent);
+  /* status */
+  --st-backlog:#A29E96; --st-todo:#7C7870; --st-progress:#C88A14; --st-review:#7652C2; --st-done:#2E8456;
+  /* elevation */
+  --shadow-sm:0 1px 2px rgba(28,25,20,.05);
+  --shadow-card:0 1px 2px rgba(28,25,20,.04), 0 0 0 1px var(--border);
+  --shadow-pop:0 12px 32px -8px rgba(28,25,20,.16), 0 2px 6px -2px rgba(28,25,20,.06), 0 0 0 1px var(--border);
+  --shadow-drag:0 16px 36px -10px rgba(28,25,20,.28), 0 0 0 1px var(--border-strong);
+  /* radius */
+  --r-xs:4px; --r-sm:6px; --r:8px; --r-lg:10px; --r-full:999px;
+  /* spacing (4pt scale) */
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:20px; --s-6:24px; --s-8:32px; --s-10:40px; --s-12:48px;
+  /* type */
+  --font:"Geist", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono:"Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --fs-2xs:11px; --fs-xs:12px; --fs-sm:12.5px; --fs:13.5px; --fs-md:14.5px; --fs-lg:16px; --fs-xl:19px; --fs-2xl:23px;
+  /* component sizes */
+  --h-xs:22px; --h-sm:26px; --h-md:30px; --h-lg:36px;
+  --side-w:252px; --side-row:30px; --row-h:40px; --card-pad:10px;
+  --topbar-h:46px;
+  --ease:cubic-bezier(.23,1,.32,1); --spring:cubic-bezier(.34,1.56,.64,1); --ease-drawer:cubic-bezier(.32,.72,0,1); --dur:140ms;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1A1A19; --bg-side:#151514; --surface:#1D1D1C; --surface-2:#252524; --surface-3:#2D2D2B;
+    --sunken:#181817; --overlay:rgba(0,0,0,.55);
+    --border:#2C2B29; --border-strong:#3A3936; --divider:#252523;
+    --text:#ECEAE5; --text-2:#B5B2AB; --text-3:#9A968F; --text-4:#6F6C66; --text-inv:#151514;
+    --accent:var(--acc-d); --on-accent:#12131C;
+    --green:#5CBA86; --amber:#D8A443; --red:#E57D70; --blue:#72A5EA; --violet:#A98DEB; --teal:#58C0B6; --rose:#E68AAB; --orange:#E3925F; --gray:#8F8B84;
+    --pc-mix:72%; --st-backlog:#6F6C66; --st-todo:#A6A39C; --st-progress:#D8A443; --st-review:#A98DEB; --st-done:#5CBA86;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+    --shadow-card:0 0 0 1px var(--border);
+    --shadow-pop:0 16px 40px -10px rgba(0,0,0,.6), 0 0 0 1px var(--border-strong);
+    --shadow-drag:0 18px 40px -10px rgba(0,0,0,.7), 0 0 0 1px var(--border-strong);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1A1A19; --bg-side:#151514; --surface:#1D1D1C; --surface-2:#252524; --surface-3:#2D2D2B;
+  --sunken:#181817; --overlay:rgba(0,0,0,.55);
+  --border:#2C2B29; --border-strong:#3A3936; --divider:#252523;
+  --text:#ECEAE5; --text-2:#B5B2AB; --text-3:#9A968F; --text-4:#6F6C66; --text-inv:#151514;
+  --accent:var(--acc-d); --on-accent:#12131C;
+  --green:#5CBA86; --amber:#D8A443; --red:#E57D70; --blue:#72A5EA; --violet:#A98DEB; --teal:#58C0B6; --rose:#E68AAB; --orange:#E3925F; --gray:#8F8B84;
+  --pc-mix:72%; --st-backlog:#6F6C66; --st-todo:#A6A39C; --st-progress:#D8A443; --st-review:#A98DEB; --st-done:#5CBA86;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+  --shadow-card:0 0 0 1px var(--border);
+  --shadow-pop:0 16px 40px -10px rgba(0,0,0,.6), 0 0 0 1px var(--border-strong);
+  --shadow-drag:0 18px 40px -10px rgba(0,0,0,.7), 0 0 0 1px var(--border-strong);
+  color-scheme:dark;
+}
+/* accent variants */
+:root[data-accent="blue"]{--acc-l:#2F6CD4;--acc-d:#74A7F0}
+:root[data-accent="violet"]{--acc-l:#7348CC;--acc-d:#AE93F0}
+:root[data-accent="teal"]{--acc-l:#1A7F7A;--acc-d:#5CC4BA}
+:root[data-accent="rose"]{--acc-l:#B93D68;--acc-d:#EC8DAE}
+:root[data-accent="graphite"]{--acc-l:#34332F;--acc-d:#D9D6CF}
+:root[data-side="compact"]{--side-row:26px}
+:root[data-density="compact"]{--row-h:34px; --card-pad:8px}
